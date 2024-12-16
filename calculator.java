@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -47,5 +48,14 @@ public class calculator {
             default -> result;
         };
         System.out.println("Here is your result: " + result);
+
+        ArrayList<String> history = new ArrayList<>();
+        String resultString = num1 + " " + operation + " " + num2 + " = " + result;
+        history.add(resultString);
+
+        System.out.println("Calculation History: ");
+        for (String entry : history){
+            System.out.println(entry);
+        }
     }
 }
